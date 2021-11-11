@@ -1,7 +1,7 @@
 const objects = {
-    ROCK: 'ROCK',
-    PAPER: 'PAPER',
-    SCISSOR: 'SCISSOR',
+    ROCK: 'rock',
+    PAPER: 'paper',
+    SCISSOR: 'scissor',
 }
 let computerSelection;
 let playerSelection;
@@ -22,11 +22,11 @@ function playRound(selection){
     playerSelection = playerPlay(selection);
     computerSelection = computerPlay();
     round++;
-    let result = getWinner(computerSelection,playerSelection);
+    let result = `You choose ${playerSelection}<br> Computer choose ${computerSelection}<br> ${getWinner(computerSelection,playerSelection)} win the round !`;
     if(round === 5 || playerPoint === 3 || computerPoint === 3)
     {
-        if (playerPoint > computerPoint) result = "End of the Game. You Win!";
-        else result = "End of the Game. You Loose!";
+        if (playerPoint > computerPoint) result = "End of the Game.<br>You Win!";
+        else result = "End of the Game.<br>You Loose!";
         document.getElementById("playerinterface").style.display = "none";
     }
     updateUI(playerPoint,computerPoint,round,result);
@@ -59,30 +59,29 @@ let computerPlay = () => {
                 play = objects.SCISSOR;
                 break;
     }
-    console.log("Computer choose: " + play);
     return play;
 }
 let getWinner = (computerSelection, playerSelection) => {   
     if(computerSelection == playerSelection)
     {
-        return "Draw !";
+        return "Nobody";
     }
     else if((computerSelection == objects.ROCK && playerSelection == objects.SCISSOR) ||
         (computerSelection == objects.PAPER && playerSelection == objects.ROCK) ||
         (computerSelection == objects.SCISSOR && playerSelection == objects.PAPER))
         {
             document.getElementById("computerPoint").innerHTML = computerPoint++;
-            return "Computer Win !";
+            return "Computer";
         }
     else{
         document.getElementById("playerPoint").innerHTML = playerPoint++;
-        return "Player Win !";
+        return "You";
     } 
 }
 let restart = () => {
     playerPoint = 0;
     computerPoint = 0;
     round = 0;
-    let playerinterface = document.getElementById("playerinterface").style.display = "block"; 
+    document.getElementById("playerinterface").style.display = "block"; 
     updateUI(playerPoint,computerPoint,round,"");    
 }
