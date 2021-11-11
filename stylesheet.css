@@ -63,3 +63,10 @@ footer{
     font-size: 12px;
     font-weight: 100;
 }
+
+@media screen and (max-width : 700px ) {
+    body{
+        font-size: 24px;        
+    }
+    
+}
