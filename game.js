@@ -13,8 +13,7 @@ let updateUI = (playerPoint,computerPoint,round,result) => {
     document.getElementById("playerPoint").innerHTML = playerPoint;
     document.getElementById("round").innerHTML = round;
     document.getElementById("computerPoint").innerHTML = computerPoint;
-    document.getElementById("game").innerHTML = result;
-    
+    document.getElementById("result").innerHTML = result;
 }
 
 updateUI(playerPoint,computerPoint,round,"");
@@ -24,7 +23,14 @@ function playRound(selection){
     computerSelection = computerPlay();
     round++;
     let result = getWinner(computerSelection,playerSelection);
+    if(round === 5 || playerPoint === 3 || computerPoint === 3)
+    {
+        if (playerPoint > computerPoint) result = "End of the Game. You Win!";
+        else result = "End of the Game. You Loose!";
+        document.getElementById("playerinterface").style.display = "none";
+    }
     updateUI(playerPoint,computerPoint,round,result);
+    
 }
 let playerPlay = selection => {
     switch(selection) {
@@ -77,5 +83,6 @@ let restart = () => {
     playerPoint = 0;
     computerPoint = 0;
     round = 0;
-    updateUI(playerPoint,computerPoint,round);    
+    let playerinterface = document.getElementById("playerinterface").style.display = "block"; 
+    updateUI(playerPoint,computerPoint,round,"");    
 }

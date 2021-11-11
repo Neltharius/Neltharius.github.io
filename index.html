@@ -17,23 +17,26 @@
         
     </header>
     <main>
-        <p id="p1">Make your choice:</p>
-        <ul>
-            <li>
-                <button id ="leftbutn" onclick="playRound(0)">Rock</button>
-            </li>
-            <li>
-                <button id= "centerbutn" onclick="playRound(1)">Paper</button>
-            </li>
-            <li>
-                <button id="rightbutn" onclick="playRound(2)">Scissor</button>
-            </li>
-        </ul>
-        <p id= "game"></p>
+        <section id="playerinterface">
+            <p>Make your choice:</p>
+            <ul>
+                <li>
+                    <button id ="leftbutn" onclick="playRound(0)">Rock</button>
+                </li>
+                <li>
+                    <button id= "centerbutn" onclick="playRound(1)">Paper</button>
+                </li>
+                <li>
+                    <button id="rightbutn" onclick="playRound(2)">Scissor</button>
+                </li>
+            </ul>
+        </section>
+        
+        <p id= "result"></p>
         <button onclick="restart()">Restart</button>
     </main>
     <footer>
-        <p>Copyright ©  Jerome Crepin 2021</p>
+        <p>©Jerome Crepin 2021</p>
     </footer>
 </body>
 <script = src="game.js"></script>
