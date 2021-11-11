@@ -4,15 +4,19 @@
 }
 body{
     background-color: #082032;
+    margin: 0%;
     text-align: center;
     color: var(--whitetext);
+    font-family: 'Roboto', sans-serif;
     font-size: 48px;
+    font-weight: 400;
 }
 button{
     border: none;
     background-color: var(--orange);
     font-weight: bold;
     color: var(--whitetext);
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     cursor: pointer;
     transition: background-color 0.5s;
 }
@@ -36,14 +40,26 @@ main li button{
     width: 100px;
     height: 100px;
 }
+main button{
+    width: 135px;
+    height: 50px;
+    border-radius: 20px;
+}
 #leftbutn{
     border-radius: 20% 0% 0% 20%;
+}
+#centerbutn{
+    border-radius: 0% 0% 0% 0%;
+
 }
 #rightbutn{
     border-radius: 0% 20% 20% 0%;
 }
-footer{
+footer{   
+    position:absolute;
+    bottom:0;
+    width: 100%;
     background-color: #334756;
-    font-size: 24px;
-    font-weight: lighter;
+    font-size: 12px;
+    font-weight: 100;
 }
