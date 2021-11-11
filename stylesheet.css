@@ -1,0 +1,53 @@
+:root{
+    --orange: #F0A500;
+    --whitetext: #D4D4D6;
+}
+body{
+    background-color: #082032;
+    text-align: center;
+    color: var(--whitetext);
+    font-size: 48px;
+}
+button{
+    border: none;
+    background-color: var(--orange);
+    font-weight: bold;
+    color: var(--whitetext);
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+button:hover{
+    background-color: #334756;
+}
+ul{
+    padding: 0px;
+}
+header ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+main ul{
+    
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+main li{
+    padding: 0% 5px;
+}
+main li button{
+    width: 100px;
+    height: 100px;
+}
+#leftbutn{
+    border-radius: 20% 0% 0% 20%;
+}
+#rightbutn{
+    border-radius: 0% 20% 20% 0%;
+}
+footer{
+    background-color: #334756;
+    font-size: 24px;
+    font-weight: lighter;
+}
